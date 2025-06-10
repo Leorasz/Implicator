@@ -5,3 +5,4 @@ outputs.json
 poll.pth
 update.pth
 wiki_intros.json
+fact_embeddings.pt
