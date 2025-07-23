@@ -14,7 +14,7 @@ The embedding generation and generation of other useful files is embedding\_orga
 
 LLM Version  
 
-The next version leverages the existing knowledge of LLMs about what data is to be expected of individuals. Instead of have situation vectors and fact vectors, the situation and the fact being polled are in one string. Here's some examples of input data (from data/pos2.json):
+The next version leverages the existing knowledge of LLMs about what data is to be expected of individuals. Instead of having situation vectors and fact vectors, the situation and the fact being polled are in one string. Here's some examples of input data (from data/pos2.json):
 ```json
 "Known information: They manage events. They write. They are a media marketing communications consultant. They produce. They are a rhythmic gymnastics national team member.\nIs this true: They are a rhythmic gymnastics national team member\nProbability:",
 "Known information: They play soprano saxophone. They are a singer.\nIs this true: They play alto saxophone\nProbability:",
@@ -52,3 +52,4 @@ The output was 0.72265625
 Give your fact: They are Japanese
 The output was 0.05419921875
 ```
+The code can be found in the llm_implicator.py file.
