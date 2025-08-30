@@ -52,4 +52,7 @@ The output was 0.72265625
 Give your fact: They are Japanese
 The output was 0.05419921875
 ```
-The code can be found in the llm_implicator.py file.
+
+As you can see, although the scores don't seem to match empirical percentages, comparitively everything is in order, which is the key to its utility. Future work would explore how to get the outputs to be more reasonable standalone scores, but this current version is still useful, say in figuring out which gender or nationality an individual is most likely to be.  
+
+The code for all of the training setup can be found in the llm_implicator.py file.
