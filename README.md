@@ -1,18 +1,18 @@
-Implicator  
+**Implicator**  
 
 This is an intermediate testing phase of a research project I'm working on. The goal is to be able to perform "forensic analysis" where given limited facts you can imply more information from it.  
 
-Original Data  
+**Original Data**  
 
 The dataset used was originally Wikipedia and then that was altered to only have the intro sections of individuals. All of these were then fed through an LLM to break each mini-biography down into individual facts which were then further cleaned and parsed. All of the facts are then embedded and each individual is stored as the indices of their facts.  
 
-Original Model  
+**Original Model**  
 
 The "model" consists of two neural networks: an updater::R^situation\_dimension->R^fact\_dimension->R^situation\_dimension which given the current situation vector (starting from the zero vector) creates an update to it given the fact. Then there's the poller::R^situation\_dimension->R^fact\_dimension->[0,1] which "polls" the situation for the fact and gives the "score" that the fact belongs to the situation. As previously mentioned, each individual is made up of facts. In training, for each fact the situation is updated with it, but then is polled against every other fact in the individual, including the ones not yet given. This "forced guessing" technique is the key to making implications and not letting the model stick to only what it's been given.
 
 The embedding generation and generation of other useful files is embedding\_organizer.py, the implicator itself and training is in implicator.py, and to test it use implicator\_tester.py
 
-LLM Version  
+**LLM Version**  
 
 The next version leverages the existing knowledge of LLMs about what data is to be expected of individuals. Instead of having situation vectors and fact vectors, the situation and the fact being polled are in one string. Here's some examples of input data (from data/pos2.json):
 ```json
